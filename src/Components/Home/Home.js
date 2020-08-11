@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Card, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
+import { faClock, faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import Mask_Group_1 from "../../images/Mask_Group_1.png";
 import NavTop from "../NavTop/NavTop";
 import "./Home.css";
@@ -10,9 +10,9 @@ const Home = () => {
     <div className="home">
       <Container className="home-container">
         <NavTop></NavTop>
-        <Row>
+        <Row className="custom-my">
           <Col
-            sm={6}
+            lg={6}
             className="d-flex justify-content-center align-items-center"
           >
             <div className="px-md-2  my-3">
@@ -28,22 +28,22 @@ const Home = () => {
               </a>
             </div>
           </Col>
-          <Col sm={6}>
+          <Col lg={6}>
             <div className="p-5">
               <img src={Mask_Group_1} alt="" className="img-fluid" />
             </div>
           </Col>
         </Row>
-        <Row className="px-md-5">
-          <Col sm={4}>
-            <Card className="mb-2">
+        <Row>
+          <Col lg={4}>
+            <Card className="mb-2 home-card1">
               <Card.Body>
                 <Row>
                   <Col className="m-auto">
                     <FontAwesomeIcon icon={faClock} className="fa-3x" />
                   </Col>
                   <Col xs={8}>
-                    <h5>Opening Hours</h5>
+                    <p>Opening Hours</p>
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit
                     </p>
@@ -52,15 +52,15 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col sm={4}>
-            <Card className="mb-2">
+          <Col lg={4}>
+            <Card className="mb-2 home-card2">
               <Card.Body>
                 <Row>
                   <Col className="m-auto">
-                    <FontAwesomeIcon icon={faClock} className="fa-3x" />
+                    <FontAwesomeIcon icon={faLocationArrow} className="fa-3x" />
                   </Col>
                   <Col xs={8}>
-                    <h5>Opening Hours</h5>
+                    <p>Opening Hours</p>
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit
                     </p>
@@ -69,15 +69,15 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col sm={4}>
-            <Card className="mb-2">
+          <Col lg={4}>
+            <Card className="mb-2 home-card3">
               <Card.Body>
                 <Row>
                   <Col className="m-auto">
                     <FontAwesomeIcon icon={faClock} className="fa-3x" />
                   </Col>
                   <Col xs={8}>
-                    <h5>Opening Hours</h5>
+                    <p>Opening Hours</p>
                     <p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit
                     </p>

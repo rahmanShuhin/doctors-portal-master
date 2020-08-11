@@ -1,13 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Table,
-  Spinner,
-  Modal,
-  Button,
-} from "react-bootstrap";
+import { Container, Row, Col, Table, Spinner, Modal } from "react-bootstrap";
 import SideBar from "../SideBar/SideBar";
 import "./DashBoard.css";
 import { DataContext } from "../Data";
@@ -23,7 +15,9 @@ const DashBoard = () => {
   const handleShow = (id) => {
     const fake = data.find((x) => x._id === id);
     setModal(fake);
-    setMedi(fake.medicine);
+    if (fake.prescription) {
+      setMedi(fake.medicine);
+    }
     setShow(true);
   };
   useEffect(() => {
@@ -60,36 +54,41 @@ const DashBoard = () => {
       //console.log(final);
       newData[0].medicine = final;
       setMedi(final);
-    } else {
-      newData[0].prescription = true;
-      const final = [
-        {
-          medicine: form_data[0].value,
-          dose: form_data[1].value,
-          days: form_data[2].value,
+      fetch("http://localhost:5000/updatePrescription", {
+        method: "POST",
+        body: JSON.stringify({
+          id: newData[0]._id,
+          medicine: final,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
         },
-      ];
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    } else {
+      const final = [formData];
       newData[0].medicine = final;
       setMedi(final);
+      newData[0].prescription = true;
+      fetch("http://localhost:5000/updatePrescription", {
+        method: "POST",
+        body: JSON.stringify({
+          id: newData[0]._id,
+          medicine: final,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
     }
     setModal(newData[0]);
     form_data[0].value = "";
     form_data[2].value = 0;
-    console.log(newData);
-    fetch("http://localhost:5000/updatePrescription", {
-      method: "POST",
-      body: JSON.stringify({
-        id: newData[0]._id,
-        medicine: medi,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data));
   };
-  //console.log(modal);
+  console.log(medi);
   const handleAction = (e, id) => {
     const newArr = data.map((x) => {
       if (x._id === id) {
@@ -161,7 +160,11 @@ const DashBoard = () => {
           </thead>
 
           {data.length === 0 ? (
-            <Spinner animation="border" variant="warning" />
+            <Spinner
+              animation="border"
+              variant="warning"
+              className="text-center mx-auto spinner-box"
+            />
           ) : (
             data.map((x, index) => (
               <tbody>
@@ -276,6 +279,7 @@ const DashBoard = () => {
               </thead>
 
               {modal.prescription === true &&
+                medi &&
                 medi.map((x) => (
                   <tbody>
                     <tr>

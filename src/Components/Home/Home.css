@@ -7,12 +7,43 @@
 .home-container {
   min-height: 90vh;
 }
-@media only screen and (max-width: 600px) {
+.home-container h2 {
+  font-size: 50px;
+}
+.custom-my {
+  margin-top: 18%;
+  margin-bottom: 18%;
+}
+
+.home-card1,
+.home-card3 {
+  background-color: rgba(0, 139, 139, 0.829);
+  color: white;
+}
+.home-card2 {
+  background-color: rgb(18, 18, 63);
+  color: white;
+}
+.home-card1 p:nth-child(1),
+.home-card2 p:nth-child(1),
+.home-card3 p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 700;
+  color: lightgray;
+}
+
+@media only screen and (max-width: 768px) {
   .home {
     background: url(../../images/background1.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top top;
     min-height: 90vh;
+  }
+  .custom-my {
+    margin-top: 20%;
+  }
+  .home-container h2 {
+    font-size: 7vw;
   }
 }

@@ -1,8 +1,12 @@
-*{
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
-.nav-link-top,.nav-brand{
+html {
+  scroll-behavior: smooth;
+}
+.nav-link-top,
+.nav-brand {
   color: darkcyan !important;
 }

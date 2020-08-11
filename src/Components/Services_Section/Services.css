@@ -1,0 +1,42 @@
+.gray-p {
+  color: gray;
+  line-height: 35px;
+  font-size: 18px;
+}
+.services-h2 {
+  font-size: 45px;
+  letter-spacing: 2px;
+}
+.doctor_appoint {
+  background-color: navy;
+  color: white;
+
+  position: relative;
+}
+.img-doctor {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 450px;
+}
+.fa-quote {
+  color: rgba(0, 255, 255, 0.301) !important;
+  font-size: 150px !important;
+}
+.jumbotron {
+  color: white;
+  background: none;
+  width: 50%;
+  margin: 0 auto !important;
+}
+.contact-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../../images/Mask_Group_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-width: 768px) {
+  .jumbotron {
+    width: 100%;
+  }
+}

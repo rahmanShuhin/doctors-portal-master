@@ -10,6 +10,8 @@ import Patients from "./Components/Patients/Patients";
 import { Data } from "./Components/Data";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TodayAppointment from "./Components/TodayAppointment/TodayAppointment";
+import Services from "./Components/Services_Section/Services";
+import Footer from "./Components/Footer/Footer";
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,7 @@ function App() {
           <Switch>
             <Route path="/appointment">
               <Appointment></Appointment>
+              <Footer></Footer>
             </Route>
             <Route path="/login">
               <Login></Login>
@@ -36,6 +39,8 @@ function App() {
             </Route>
             <Route path="/">
               <Home></Home>
+              <Services></Services>
+              <Footer></Footer>
             </Route>
           </Switch>
         </Router>

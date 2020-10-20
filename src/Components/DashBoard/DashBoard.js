@@ -3,6 +3,8 @@ import { Container, Row, Col, Table, Spinner, Modal } from "react-bootstrap";
 import SideBar from "../SideBar/SideBar";
 import "./DashBoard.css";
 import { DataContext } from "../Data";
+import Hamburger from "../Hamburger/Hamburger";
+import { Helmet } from "react-helmet";
 const DashBoard = () => {
   const [data, setData] = useContext(DataContext);
   const [user, setUser] = useState([]);
@@ -54,7 +56,7 @@ const DashBoard = () => {
       //console.log(final);
       newData[0].medicine = final;
       setMedi(final);
-      fetch("http://localhost:5000/updatePrescription", {
+      fetch("https://still-mesa-75708.herokuapp.com/updatePrescription", {
         method: "POST",
         body: JSON.stringify({
           id: newData[0]._id,
@@ -71,7 +73,7 @@ const DashBoard = () => {
       newData[0].medicine = final;
       setMedi(final);
       newData[0].prescription = true;
-      fetch("http://localhost:5000/updatePrescription", {
+      fetch("https://still-mesa-75708.herokuapp.com/updatePrescription", {
         method: "POST",
         body: JSON.stringify({
           id: newData[0]._id,
@@ -99,7 +101,7 @@ const DashBoard = () => {
       }
     });
     setData(newArr);
-    fetch("http://localhost:5000/updateStatus", {
+    fetch("https://still-mesa-75708.herokuapp.com/updateStatus", {
       method: "POST",
       body: JSON.stringify({
         id: id,
@@ -114,11 +116,20 @@ const DashBoard = () => {
   };
   return (
     <Container fluid className="dashboard">
+      <Helmet>
+        <title>Dashboard | Doctors Portal</title>
+        <meta name="description" content="Now a days All things are based on Online. Find a good doctor is so  much hassle  now a days.
+        Doctors portal is going to give you advantage that you don't need to go hospital physically.You can book and get the best treatment from now ."/>
+        <meta name="keywords" content="online doctors book appointment"/>
+      </Helmet>
       <div className="ml-6 main">
-        <div className="d-none d-md-block">
+        <div className="d-md-block">
           <SideBar></SideBar>
         </div>
-        <h3 className="mt-3">DashBoard</h3>
+        <div className="title__hamburger">
+          <h3 className="mt-3">DashBoard</h3>
+          <Hamburger></Hamburger>
+        </div>
         <Row className="my-3 text-light">
           <Col sm={6} md={3}>
             <div className="m-1 p-2 box-1">
@@ -233,7 +244,7 @@ const DashBoard = () => {
           </p>
         </Modal.Header>
         <Modal.Body>
-          <div>
+          
             <form className="medicine_input mx-auto" onSubmit={updateMedi}>
               <input
                 type="text"
@@ -291,7 +302,7 @@ const DashBoard = () => {
                   </tbody>
                 ))}
             </Table>
-          </div>
+          
         </Modal.Body>
       </Modal>
     </Container>

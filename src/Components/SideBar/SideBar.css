@@ -9,6 +9,8 @@
   top: 0px;
   left: 0px;
   z-index: 10;
+
+  transition-duration: 0.5s;
 }
 .side-item {
   display: flex;
@@ -36,5 +38,11 @@
 @media screen and (max-width: 700px) {
   .ml-6 {
     margin-left: 0px !important;
+  }
+  .sidenav {
+    transform: translate(-100%);
+  }
+  .active {
+    transform: translate(0%) !important;
   }
 }

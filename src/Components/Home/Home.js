@@ -5,9 +5,16 @@ import { faClock, faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import Mask_Group_1 from "../../images/Mask_Group_1.png";
 import NavTop from "../NavTop/NavTop";
 import "./Home.css";
+import { Helmet } from "react-helmet";
 const Home = () => {
   return (
     <div className="home">
+      <Helmet>
+        <title>Doctors Portal | Online  Appointment</title>
+        <meta name="description" content="Now a days All things are based on Online. Find a good doctor is so  much hassle  now a days.
+        Doctors portal is going to give you advantage that you don't need to go hospital physically.You can book and get the best treatment from now ."/>
+        <meta name="keywords" content="online doctors book appointment"/>
+      </Helmet>
       <Container className="home-container">
         <NavTop></NavTop>
         <Row className="custom-my">

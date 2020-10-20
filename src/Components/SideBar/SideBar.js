@@ -28,12 +28,12 @@ const SideBar = () => {
             <FontAwesomeIcon icon={faUserInjured} /> Patients
           </button>
         </Link>
-        <Link>
+        <Link to="/prescription">
           <button className="my-md-3">
             <FontAwesomeIcon icon={faCalendarCheck} /> Prescriptions
           </button>
         </Link>
-        <Link>
+        <Link to="/setting">
           <button className="my-md-3">
             <FontAwesomeIcon icon={faCogs} /> Setting
           </button>

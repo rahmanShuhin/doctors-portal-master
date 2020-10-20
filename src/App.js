@@ -12,6 +12,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TodayAppointment from "./Components/TodayAppointment/TodayAppointment";
 import Services from "./Components/Services_Section/Services";
 import Footer from "./Components/Footer/Footer";
+import NotFound from "./Components/NotFound/NotFound";
+import Prescription from "./Components/Prescription/Prescription";
 function App() {
   return (
     <div className="App">
@@ -36,6 +38,12 @@ function App() {
             </Route>
             <Route path="/today">
               <TodayAppointment></TodayAppointment>
+            </Route>
+            <Route path="/prescription">
+              <Prescription></Prescription>
+            </Route>
+            <Route path="/setting">
+              <NotFound></NotFound>
             </Route>
             <Route path="/">
               <Home></Home>

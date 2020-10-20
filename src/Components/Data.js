@@ -3,7 +3,7 @@ export const DataContext = createContext();
 export const Data = (props) => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/Appointment")
+    fetch("https://still-mesa-75708.herokuapp.com/Appointment")
       .then((response) => response.json())
       .then((jsun) => setData(jsun.reverse()));
   }, []);

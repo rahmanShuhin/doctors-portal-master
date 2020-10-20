@@ -15,6 +15,7 @@ import Calendar from "react-calendar";
 import Mask_Group_1 from "../../images/Mask_Group_1.png";
 import { useForm } from "react-hook-form";
 import "./Appointment.css";
+import { Helmet } from "react-helmet";
 const Appointment = () => {
   const { register, handleSubmit, errors } = useForm(); // initialise the hook
   const [err, setErr] = useState(null);
@@ -63,6 +64,12 @@ const Appointment = () => {
   };
   return (
     <div className="appointment">
+      <Helmet>
+        <title>Appointment | Doctors Portal</title>
+        <meta name="description" content="Now a days All things are based on Online. Find a good doctor is so  much hassle  now a days.
+        Doctors portal is going to give you advantage that you don't need to go hospital physically.You can book and get the best treatment from now ."/>
+        <meta name="keywords" content="online doctors book appointment"/>
+      </Helmet>
       <Container className="px-5">
         <NavTop></NavTop>
         <Row className="py-5">

@@ -5,6 +5,7 @@ import "./Doctors.css";
 const Doctors = () => {
   return (
     <Container fluid>
+      
       <SideBar></SideBar>
       <div class="main">
         <h2>Sidebar</h2>

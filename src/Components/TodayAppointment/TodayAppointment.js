@@ -5,6 +5,8 @@ import Calendar from "react-calendar";
 import { useContext } from "react";
 import { DataContext } from "../Data";
 import { useEffect } from "react";
+import Hamburger from "../Hamburger/Hamburger";
+import { Helmet } from "react-helmet";
 const TodayAppointment = () => {
   const [data, setData] = useContext(DataContext);
   const [date, setDate] = useState(new Date());
@@ -31,7 +33,7 @@ const TodayAppointment = () => {
       }
     });
     setData(newArr);
-    fetch("http://localhost:5000/updateStatus", {
+    fetch("https://still-mesa-75708.herokuapp.com/updateStatus", {
       method: "POST",
       body: JSON.stringify({
         id: id,
@@ -47,11 +49,20 @@ const TodayAppointment = () => {
   console.log(today);
   return (
     <Container fluid className="dashboard">
+      <Helmet>
+        <title>Today's Appointment | Doctors Portal</title>
+        <meta name="description" content="Now a days All things are based on Online. Find a good doctor is so  much hassle  now a days.
+        Doctors portal is going to give you advantage that you don't need to go hospital physically.You can book and get the best treatment from now ."/>
+        <meta name="keywords" content="online doctors book appointment"/>
+      </Helmet>
       <div className="ml-6 main">
-        <div className="d-none d-md-block">
+        <div className="d-md-block">
           <SideBar></SideBar>
         </div>
-        <h2 className="mt-5">Today Appointment</h2>
+        <div className="title__hamburger">
+          <h2 className="mt-5">Today Appointment</h2>
+          <Hamburger></Hamburger>
+        </div>
         <Row className="mt-5">
           <Col md={5}>
             <Calendar

@@ -3,9 +3,16 @@ import NavTop from "../NavTop/NavTop";
 import { Link } from "react-router-dom";
 import Group140 from "../../images/Group140.png";
 import { Row, Col, Container, Card } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 const Login = () => {
   return (
     <Container>
+      <Helmet>
+        <title>Login | Doctors Portal</title>
+        <meta name="description" content="Now a days All things are based on Online. Find a good doctor is so  much hassle  now a days.
+        Doctors portal is going to give you advantage that you don't need to go hospital physically.You can book and get the best treatment from now ."/>
+        <meta name="keywords" content="online doctors book appointment"/>
+      </Helmet>
       <NavTop></NavTop>
       <Row>
         <Col className="mx-md-auto my-md-auto text-center my-5" sm={6}>

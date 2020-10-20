@@ -36,14 +36,28 @@
 #status option {
   color: black;
 }
+.medicine_input {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  background: red !important;
+}
 .medicine_input > input:nth-child(1) {
-  width: 50%;
+  flex: 1;
+}
+.medicine_input > select:nth-child(2) {
+  flex: 1;
 }
 .medicine_input > input:nth-child(3) {
-  width: 20%;
+  flex: 1;
 }
 .medicine_input > input:nth-child(4) {
-  width: 10%;
+  flex: 1;
 }
 .spinner-box {
+}
+.title__hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

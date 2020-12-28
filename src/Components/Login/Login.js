@@ -16,7 +16,6 @@ const Login = () => {
   const handleLogin = () => {
     if (email && pass) {
       if (email === "fahad@gmail.com" && pass === "123456789") {
-        alert("congratulations");
         setErr(false);
         const arr = {
           email: email,

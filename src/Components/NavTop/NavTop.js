@@ -11,7 +11,7 @@ const NavTop = () => {
     >
       <Navbar.Brand href="/" className="font-weight-bold nav-brand">
         <FontAwesomeIcon icon={faTooth} className="mr-2" />
-        Doctors Portal
+        Dentists Gateway
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -23,7 +23,7 @@ const NavTop = () => {
             About
           </Nav.Link>
           <Nav.Link href="/login" className="mx-2 nav-link-top">
-            Doctors Portal
+            Doctors Dashboard
           </Nav.Link>
           <Nav.Link href="/home/#blog" className="mx-md-3 mx-2 nav-link-top">
             Blog

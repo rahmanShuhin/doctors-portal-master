@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import NavTop from "../NavTop/NavTop";
 import { Link } from "react-router-dom";
 import Group140 from "../../images/Group140.png";
@@ -21,6 +21,7 @@ const UserLogin = () => {
           email: result.user.email,
           logged: true,
         };
+        history.push("/appointment");
         setUser(arr);
         console.log(arr);
       })
@@ -30,6 +31,11 @@ const UserLogin = () => {
         alert(errorMessage);
       });
   };
+  useEffect(() => {
+    if (user) {
+      history.push("/appointment");
+    }
+  }, [user]);
   const handleSignOut = () => {
     firebase
       .auth()

@@ -14,34 +14,39 @@ import Services from "./Components/Services_Section/Services";
 import Footer from "./Components/Footer/Footer";
 import NotFound from "./Components/NotFound/NotFound";
 import Prescription from "./Components/Prescription/Prescription";
+import { DoctorRoute, PrivateRoute } from "./Components/useAuth";
+import UserLogin from "./Components/Login/UserLogin";
 function App() {
   return (
     <div className="App">
       <Data>
         <Router>
           <Switch>
-            <Route path="/appointment">
+            <PrivateRoute path="/appointment">
               <Appointment></Appointment>
               <Footer></Footer>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/user-login">
+              <UserLogin></UserLogin>
             </Route>
             <Route path="/doctors">
               <Doctors></Doctors>
             </Route>
-            <Route path="/dashboard">
+            <DoctorRoute path="/dashboard">
               <DashBoard></DashBoard>
-            </Route>
-            <Route path="/patients">
+            </DoctorRoute>
+            <DoctorRoute path="/patients">
               <Patients></Patients>
-            </Route>
-            <Route path="/today">
+            </DoctorRoute>
+            <DoctorRoute path="/today">
               <TodayAppointment></TodayAppointment>
-            </Route>
-            <Route path="/prescription">
+            </DoctorRoute>
+            <DoctorRoute path="/prescription">
               <Prescription></Prescription>
-            </Route>
+            </DoctorRoute>
             <Route path="/setting">
               <NotFound></NotFound>
             </Route>

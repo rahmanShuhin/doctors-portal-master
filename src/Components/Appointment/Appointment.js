@@ -34,19 +34,14 @@ const Appointment = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        if (data.err) {
-          setSpin(false);
-          console.log(data.err);
-          setErr({
-            message: data.err,
-          });
-        } else {
-          setSuccess(true);
-          setErr(null);
-          setSpin(false);
-        }
+        setSuccess(true);
+        setErr(null);
+        setSpin(false);
       });
+    alert("success");
+    setSuccess(true);
+    setErr(null);
+    setSpin(false);
   };
   const [date, setDate] = useState(new Date());
   const [show, setShow] = useState(false);
@@ -156,7 +151,7 @@ const Appointment = () => {
                   )}
                   <input
                     name="age"
-                    ref={register({ pattern: /\d+/ }, { required: true })}
+                    ref={register({ required: true })}
                     placeholder="Enter Your Age"
                   />
                   {errors.age && (

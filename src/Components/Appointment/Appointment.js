@@ -25,7 +25,7 @@ const Appointment = () => {
     setSpin(true);
     data.prescription = false;
     data.status = "Pending";
-    fetch("http://localhost:5000/addAppointment", {
+    fetch("https://still-mesa-75708.herokuapp.com/addAppointment", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -66,9 +66,12 @@ const Appointment = () => {
     <div className="appointment">
       <Helmet>
         <title>Appointment | Doctors Portal</title>
-        <meta name="description" content="Now a days All things are based on Online. Find a good doctor is so  much hassle  now a days.
-        Doctors portal is going to give you advantage that you don't need to go hospital physically.You can book and get the best treatment from now ."/>
-        <meta name="keywords" content="online doctors book appointment"/>
+        <meta
+          name="description"
+          content="Now a days All things are based on Online. Find a good doctor is so  much hassle  now a days.
+        Doctors portal is going to give you advantage that you don't need to go hospital physically.You can book and get the best treatment from now ."
+        />
+        <meta name="keywords" content="online doctors book appointment" />
       </Helmet>
       <Container className="px-5">
         <NavTop></NavTop>
